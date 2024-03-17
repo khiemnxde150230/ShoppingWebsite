@@ -1,0 +1,70 @@
+﻿@page
+@model ShoppingWebsite.Pages.Components.Supplier.IndexModel
+
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <link rel="stylesheet" href="~/css/indexForm.css" asp-append-version="true" />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.3/font/bootstrap-icons.css">
+</head>
+<body>
+    <a asp-page="/Index" class="backHome">Back</a>
+    <main class="table">
+        @if (ViewData["error"] != null)
+        {
+            <div class="form-group" style="justify-content: center; display: flex;">
+                <span style="color:red;">
+                    @ViewData["error"]
+                </span>
+            </div>
+        }
+        <section class="table__header">
+            <h1>Suppliers Manager</h1>
+            <div class="input-group">
+                <input type="search" placeholder="Search Data...">
+                <img src="~/images/search.png">
+            </div>
+            <div class="create_new">
+                <a class="btn btn-info create_new-btn" asp-page="./Create"><i class="bi bi-file-plus"></i> Create</a>
+            </div>
+        </section>
+        <section class="table__body">
+            <table>
+                <thead>
+                    <tr>
+                        <th> No. </th>
+                        <th> Company Name </th>
+                        <th> Address </th>
+                        <th> Phone </th>
+                        <th> Action </th>
+                    </tr>
+                </thead>
+                <tbody>
+                    @{
+                        int i = 1;
+                    }
+                    @foreach (var item in Model.Suppliers)
+                    {
+                        <tr>
+                            <td> @(i++) </td>
+                            <td> @item.CompanyName</td>
+                            <td> @item.Address </td>
+                            <td> @item.Phone </td>
+                            <td>
+                                <a asp-page="./Edit" asp-route-id="@item.SupplierID"><i class="bi bi-pen" style="color:#02aab0;"></i></a>
+                                <a asp-page="index" asp-route-id="@item.SupplierID" asp-page-handler="delete"><i class="bi bi-archive" style="color: red;"></i></a>
+                            </td>
+                        </tr>
+                    }
+                </tbody>
+            </table>
+        </section>
+    </main>
+</body>
+</html>

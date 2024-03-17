@@ -1,0 +1,59 @@
+﻿@page
+@model ShoppingWebsite.Pages.Components.Customer.IndexModel
+
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <link rel="stylesheet" href="~/css/indexForm.css" asp-append-version="true" />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.3/font/bootstrap-icons.css">
+</head>
+<body>
+    <a asp-page="/Index" class="backHome">Back</a>
+    <main class="table">
+        <section class="table__header">
+            <h1>Customers Manager</h1>
+            <div class="input-group">
+                <input type="search" placeholder="Search Data...">
+                <img src="~/images/search.png">
+            </div>
+            <div class="create_new">
+                <a class="btn btn-info create_new-btn" asp-page="/Register"><i class="bi bi-file-plus"></i> Create</a>
+            </div>
+        </section>
+        <section class="table__body">
+            <table>
+                <thead>
+                    <tr>
+                        <th> No. </th>
+                        <th> Contact Name </th>
+                        <th> Password </th>
+                        <th> Address </th>
+                        <th> Phone </th>
+                    </tr>
+                </thead>
+                <tbody>
+                    @{
+                        int i = 1;
+                    }
+                    @foreach (var item in Model.Customers)
+                    {
+                        <tr>
+                            <td> @(i++) </td>
+                            <td> @item.ContactName</td>
+                            <td> @item.Password </td>
+                            <td> @item.Address </td>
+                            <td> @item.Phone </td>
+                        </tr>
+                    }
+                </tbody>
+            </table>
+        </section>
+    </main>
+</body>
+</html>

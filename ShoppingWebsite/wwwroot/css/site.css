@@ -1,0 +1,157 @@
+@import url('https://fonts.googleapis.com/css2?family=Madimi+One&family=Mallanna&display=swap');
+html {
+    font-size: 14px;
+}
+
+@media (min-width: 768px) {
+    html {
+        font-size: 16px;
+    }
+}
+
+html {
+    position: relative;
+    min-height: 100%;
+}
+
+body {
+    min-height:100vh;
+}
+
+a {
+    text-decoration: none;
+    color: #000;
+}
+
+a:not(.btn-primary):hover {
+    color: #6b6b6b;
+}
+
+p{
+    margin: 1em 0;
+}
+
+.header-body {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    align-items: center;
+    min-height: 80vh;
+    background: linear-gradient(45deg, #02aab0, #00cdac);
+    padding: 30px;
+    border-radius: 10px;
+}
+
+.header-body .btn{
+    margin: 1em 0;
+    display: inline-block;
+    color: #fff;
+}
+.box-login .btn-list-item .btn-primary1 {
+    background: #02aab0;
+    padding: 4px 20px;
+    border-radius: 5px;
+    margin: 5px 1em;
+}
+.btn-primary1{
+    background: #000;
+    padding: 5px 20px;
+    border-radius: 5px;
+    color: #fff;
+    margin: 0 1em;
+}
+.banner img {
+    width: 100%;
+    height: 100%;
+    -webkit-mask-image: url("../images/2174691.svg");
+    -webkit-mask-size: contain;
+    -webkit-mask-repeat: no-repeat;
+    -webkit-mask-position: center;
+}
+.header-body .title {
+    font-family: 'Mallanna';
+    font-size: 2em;
+    margin: 0.4em 0;
+    line-height: 60px;
+    animation: slideUp 0.7s ease-in;
+}
+
+.header-text p {
+    font-family: 'Mallanna';
+    font-weight: 400;
+    font-size: 1em;
+    line-height: 27px;
+    max-width: 450px;
+    color: #fff;
+}
+
+.header-text .btn-primary{
+    margin-right: 1em;
+}
+
+/*view all product*/
+.title-product h2 {
+    font-family: 'Mallanna';
+}
+.product-inner-box .icons {
+    position: absolute;
+    right: 15px;
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+    top: 3%;
+    transition: all 0.2s ease-in-out, transform 0.2s ease-in-out, opacity 0.2s ease-in-out;
+    opacity: 0;
+}
+
+.product-inner-box .icons a{
+    width:40px;
+    height: 40px;
+    display: flex;
+    justify-content:center;
+    align-items:center;
+    border-radius: 50%;
+    background: #fff;
+}
+
+.product-inner-box img{
+    box-shadow: 0 33px 61px -29px rgb(0 0 0/ 26%);
+    height: 350px;
+    width: 100%;
+    object-fit: contain;
+    border-radius: 10px;
+}
+
+.product-box.is-hover .icons{
+    transform: rotateY(-3%);
+    top: 3%;
+    opacity: 1;
+}
+
+.cart-btn {
+    position: absolute;
+    bottom: 20px;
+    text-align: center;
+    width: 100%;
+    transition: all 0.2s ease-in-out, transform 0.2s ease-in-out, opacity 0.2s ease-in-out;
+    opacity: 0;
+}
+
+.product-box.is-hover .cart-btn{
+    opacity: 1;
+}
+
+.cart-btn .btn-white {
+    font-family: 'Mallanna';
+    background: rgb(255 255 255 / 80%)
+}
+
+.product-name h3 {
+    font-family: 'Mallanna';
+    font-size: 25px;
+    font-weight: 400;
+}
+.product-price {
+    font-family: 'Mallanna';
+}
+
+

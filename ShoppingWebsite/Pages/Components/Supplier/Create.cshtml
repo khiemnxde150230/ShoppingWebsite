@@ -1,0 +1,54 @@
+﻿@page
+@model ShoppingWebsite.Pages.Components.Supplier.CreateModel
+
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <link rel="stylesheet" href="~/css/CreateForm.css" asp-append-version="true" />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css">
+</head>
+<body>
+    <a asp-page="Index" class="backHome">Back</a>
+    <div class="login-box">
+        <h2>Create a supplier</h2>
+        <form method="post">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <div class="user-box">
+                <input type="text" asp-for="supplierVM.CompanyName">
+                <label>Company Name</label>
+                <span asp-validation-for="supplierVM.CompanyName" class="text-danger"></span>
+            </div>
+            <div class="user-box">
+                <input type="text" asp-for="supplierVM.Address">
+                <label>Address</label>
+                <span asp-validation-for="supplierVM.Address" class="text-danger"></span>
+            </div>
+            <div class="user-box">
+                <input type="text" asp-for="supplierVM.Phone">
+                <label>Phone</label>
+                <span asp-validation-for="supplierVM.Phone" class="text-danger"></span>
+            </div>
+
+            <div class="row justify-content-center">
+                <button type="submit">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                    Save
+                </button>
+            </div>
+        </form>
+    </div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}
+</body>
+</html>

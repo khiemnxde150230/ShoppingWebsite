@@ -1,0 +1,64 @@
+﻿@page
+@model ShoppingWebsite.Pages.Components.Order.IndexModel
+
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <link rel="stylesheet" href="~/css/indexForm.css" asp-append-version="true" />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.3/font/bootstrap-icons.css">
+</head>
+<body>
+     <a asp-page="/Index" class="backHome">Back</a>
+    <main class="table">
+        <section class="table__header">
+            <h1>Order Manager</h1>
+            <div class="input-group">
+                <input type="search" placeholder="Search Data...">
+                <img src="~/images/search.png">
+            </div>
+        </section>
+        <section class="table__body">
+            <table>
+                <thead>
+                    <tr>
+                        <th> No. </th>
+                        <th> Customer </th>
+                        <th> Order Date </th>
+                        <th> Required Date </th>
+                        <th> Shipped Date </th>
+                        <th> Freight </th>
+                        <th> Ship Address </th>
+                        <th> Action </th>
+                    </tr>
+                </thead>
+                <tbody>
+                    @{
+                        int i = 1;
+                    }
+                    @foreach (var item in Model.Orders)
+                    {
+                            <tr>
+                                <td> @(i++) </td>
+                                <td> @item.Customers.ContactName </td>
+                                <td> @item.OrderDate </td>
+                                <td> @item.RequiredDate </td>
+                                <td> @item.ShippedDate </td>
+                                <td> @item.Freight </td>
+                                <td> @item.ShipAddress </td>
+                                <td>
+                                    <a asp-page="./Details" asp-route-id="@item.OrderID"><i class="bi bi-journal" style="color:#02aab0;"></i></a>
+                                </td>
+                            </tr>
+                    }
+                </tbody>
+            </table>
+        </section>
+    </main>
+</body>
+</html>

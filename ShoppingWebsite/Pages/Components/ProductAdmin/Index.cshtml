@@ -1,0 +1,65 @@
+﻿@page
+@model ShoppingWebsite.Pages.Components.ProductAdmin.IndexModel
+
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <link rel="stylesheet" href="~/css/indexForm.css" asp-append-version="true" />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.3/font/bootstrap-icons.css">
+</head>
+<body>
+    <a asp-page="/Index" class="backHome">Back</a>
+    <main class="table">
+        <section class="table__header">
+            <h1>Product Manager</h1>
+            <div class="input-group">
+                <input type="search" placeholder="Search Data...">
+                <img src="~/images/search.png">
+            </div>
+            <div class="create_new">
+                <a class="btn btn-info create_new-btn" asp-page="./Create"><i class="bi bi-file-plus"></i> Create</a>
+            </div>
+        </section>
+        <section class="table__body">
+            <table>
+                <thead>
+                    <tr>
+                        <th> No. </th>
+                        <th> Product </th>
+                        <th> Category Name </th>
+                        <th> Company Name </th>
+                        <th> Quantity </th>
+                        <th> Price </th>
+                        <th> Action </th>
+                    </tr>
+                </thead>
+                <tbody>
+                    @{
+                        int i = 1;
+                    }
+                    @foreach (var item in Model.Products) {
+                    <tr>
+                        <td> @(i++) </td>
+                        <td> <img src="@item.ProductImage" >@item.ProductName</td>
+                        <td> @item.Categories.CategoryName </td>
+                        <td> @item.Suppliers.CompanyName </td>
+                        <td> @item.QuantityPerUnit </td>
+                        <td> @item.UnitPrice </td>
+                        <td>
+                            <a asp-page="./Edit" asp-route-id="@item.ProductID"><i class="bi bi-pen" style="color:#02aab0;"></i></a>
+                            <a asp-page="index" asp-route-id="@item.ProductID" asp-page-handler="delete"><i class="bi bi-archive" style="color: red;"></i></a>                         
+                        </td>
+                    </tr>
+                    }
+                </tbody>
+            </table>
+        </section>
+    </main>
+</body>
+</html>

@@ -1,0 +1,133 @@
+﻿@import url('https://fonts.googleapis.com/css2?family=Madimi+One&family=Mallanna&display=swap');
+
+body {
+    background: url('https://wallpaperaccess.com/full/6169319.jpg');
+    background-size: contain;
+}
+
+section {
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.product-card {
+    max-width: 555px;
+    width: 100%;
+    background-color: #fff;
+    border-radius: 25px;
+    padding: 20px 30px 30px 30px;
+    box-shadow: 0 5px 10px rgba(0, 0, 0, .2);
+}
+
+.product-header h1 {
+    font-family: 'Mallanna';
+}
+
+.product-card .product-body {
+    padding-top: 20px;
+}
+
+    .product-card .product-body .form-order {
+        display: flex;
+        justify-content: space-between;
+    }
+
+    .product-card .product-body .product-image {
+        padding-right: 30px;
+    }
+
+    .product-card .product-body img {
+        width: 200px;
+        height: 300px;
+        object-fit: cover;
+    }
+
+    .product-card .product-body .product-details .product-name {
+        font-family: 'Mallanna';
+        font-size: 2.5rem;
+        font-weight: 500;
+        color: #161616;
+        padding-bottom: 10px;
+    }
+
+    .product-card .product-body .product-details p {
+        font-family: 'Mallanna';
+        font-size: 12px;
+        font-weight: 400;
+        color: #333;
+        text-align: justify;
+    }
+
+    .product-card .product-body .product-details .inputBox {
+        position: relative;
+        width: 200px;
+        padding-bottom: 15px;
+    }
+
+        .product-card .product-body .product-details .inputBox input {
+            width: 100%;
+            padding: 10px;
+            border: 1px solid rgba(0, 0, 0, .25);
+            background: #fff;
+            border-radius: 5px;
+            outline: none;
+            color: #000;
+            font-size: 1em;
+        }
+
+        .product-card .product-body .product-details .inputBox span {
+            position: absolute;
+            left: 0;
+            padding: 10px;
+            pointer-events: none;
+            font-size: 1em;
+            color: rgba(0, 0, 0, .25);
+            text-transform: uppercase;
+            transition: 0.5s;
+        }
+
+        .inputBox input:valid ~ span,
+        .product-card .product-body .product-details .inputBox input:focus ~ span {
+            color: #02aab0;
+            transform: translateX(10px) translateY(-7px);
+            font-size: 0.65em;
+            padding: 0 10px;
+            background: #fff;
+            border-left: 1px solid #02aab0;
+            border-right: 1px solid #02aab0;
+        }
+
+    .product-card .product-body .product-details .product_price {
+        font-size: 1em;
+        font-weight: 600;
+        padding-bottom: 15px;
+    }
+
+    .product-card .product-body .product-details .product_btn {
+        position: relative;
+        height: 40px;
+        width: 100px;
+        background: linear-gradient(45deg,#000000,#434343);
+        border-radius: 8px;
+    }
+
+        .product-card .product-body .product-details .product_btn button {
+            font-family: 'Mallanna';
+            position: relative;
+            width: 100%;
+            height: 100%;
+            background: none;
+            border: none;
+            outline: none;
+            font-size: 18px;
+            letter-spacing: 2px;
+            color: #fff;
+        }
+
+            .product-card .product-body .product-details .product_btn button:hover {
+                background: transparent;
+                border: 1px solid linear-gradient(45deg,#000000,#434343);
+                color: #02aab0;
+            }

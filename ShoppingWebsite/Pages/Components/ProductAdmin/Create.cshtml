@@ -1,0 +1,74 @@
+﻿@page
+@model ShoppingWebsite.Pages.Components.ProductAdmin.CreateModel
+
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+    <head>
+    <meta name="viewport" content="width=device-width" />
+    <link rel="stylesheet" href="~/css/CreateForm.css" asp-append-version="true" />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css">
+</head>
+<body>
+    <a asp-page="Index" class="backHome">Back</a>
+    <div class="login-box">
+        <h2>Create a product</h2>
+        <form method="post">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <div class="user-box">
+                <input type="text" asp-for="productVM.ProductImage">
+                <label>Product Image</label>
+                <span asp-validation-for="productVM.ProductImage" class="text-danger"></span>
+            </div>
+            <div class="user-box">
+                <input type="text" asp-for="productVM.ProductName">
+                <label>Product Name</label>
+                <span asp-validation-for="productVM.ProductName" class="text-danger"></span>
+            </div>
+            <div class="form-group d-flex justify-content-between">
+                <div class="user-box mr-4">
+                    <input type="text" asp-for="productVM.QuantityPerUnit">
+                    <label>Quantity</label>
+                    <span asp-validation-for="productVM.QuantityPerUnit" class="text-danger"></span>
+                </div>
+
+                <div class="user-box ml-4">
+                    <input type="text" asp-for="productVM.UnitPrice">
+                    <label>Price</label>
+                    <span asp-validation-for="productVM.UnitPrice" class="text-danger"></span>
+                </div>
+            </div>
+            <div class="form-group d-flex justify-content-between">
+                <div class="w-50 pr-1">
+                    <label class="text-white">Category</label>
+                    <select asp-for="productVM.CategoryID" class="select-box" asp-items="ViewBag.CategoryID">
+                    </select>
+                </div>
+                <div class="w-50 pl-1">
+                    <label class="text-white">Supplier</label>
+                    <select asp-for="productVM.SupplierID" class="select-box" asp-items="ViewBag.SupplierID">
+                    </select>
+                </div>
+            </div>
+            <div class="row justify-content-center">
+                <button type="submit">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                    Save
+                </button>
+            </div>
+        </form>
+    </div>
+    @section Scripts {
+        @{
+            await Html.RenderPartialAsync("_ValidationScriptsPartial");
+        }
+    }
+</body>
+</html>
