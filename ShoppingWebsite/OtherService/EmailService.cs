@@ -26,10 +26,10 @@ namespace ShoppingWebsite.OtherService
                 // With type == 2, forgot password
                 // With type == 3, update password
                 string _text = "";
-                if (type == 1)
-                {
-                    _text = EmailHelper.Instance.BodyRegisterMail(fullname, account, password);
-                }
+                //if (type == 1)
+                //{
+                //    _text = EmailHelper.Instance.BodyRegisterMail(fullname, account, password);
+                //}
                 if (type == 2)
                 {
                     _text = EmailHelper.Instance.BodyForgotMail(fullname, account, password);

@@ -25,7 +25,7 @@
                         <h2 class="product-name">@Model.product.ProductName</h2>
                         <p style="box-sizing: border-box;" id="decscriptionp">It is consumed by living beings to provide them with energy, nutrients, and sustenance.</p>
                         <div class="inputBox">
-                            <input name="orderQuantity" type="number" min="0" max="@Model.product.QuantityPerUnit" required />
+                            <input name="orderQuantity" type="number" min="1" max="@Model.product.QuantityPerUnit" required />
                             <span class="product_quantity">Order quantity</span>
                         </div>
                         <h2 class="product_price">Price: $@Model.product.UnitPrice</h2>
